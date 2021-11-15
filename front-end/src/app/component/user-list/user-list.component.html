@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">Expressers</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a class="active">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-box' ></i>
+            <span class="links_name" routerLink="/about">About</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bxs-add-to-queue' ></i>
+            <span class="links_name" routerLink="/add-user">Add User</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a>
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Users</span>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Users</div>
+            <div class="number">40,876</div>
+          </div>
+          <i class='bx bx-user cart'></i>
+        </div>
+
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Users</div>
+            <div class="number">40,876</div>
+          </div>
+          <i class='bx bx-user cart'></i>
+        </div>
+
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Users</div>
+            <div class="number">40,876</div>
+          </div>
+          <i class='bx bx-user cart'></i>
+        </div>
+
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Users</div>
+            <div class="number">40,876</div>
+          </div>
+          <i class='bx bx-user cart'></i>
+        </div>
+    </div>
+    </div>
+
+    <section id="team" class="pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let user of User">
+                    <div class="image-flip" >
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="https://img.icons8.com/ios/100/000000/user--v3.png" alt="card image"></p>
+                                        <h4 class="card-title">{{user.displayName}}</h4>
+                                        <p class="card-text">{{user.name}} {{user.surname}} is {{user.age}} years old this year</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{user.displayName}}</h4>
+                                        <p class="card-text">{{user.name}}'s e-mail address is {{user.email}} you can check his skills below</p>
+                                        <button type="button" class="btn btn-primary btn-sm" routerLink="/user-edit/{{user.id}}">Edit</button>
+                                        <button type="button" class="btn btn-primary btn-sm" routerLink="/user-skills/{{user.id}}">Skills</button>
+                                        <button type="button" class="btn btn-primary btn-sm" (click) ="deleteUser(user.id)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
+
+
+<router-outlet></router-outlet>

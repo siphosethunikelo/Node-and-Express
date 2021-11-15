@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">Expressers</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a class="active">
+            <i class='bx bx-user' ></i>
+            <span class="links_name" routerLink="/user-list">Dashboard</span>
+          </a>
+        </li>
+        <li>
+        </li>
+        <li>
+          <a>
+            <i class='bx bxs-add-to-queue' ></i>
+            <span class="links_name" routerLink="/add-skill">Add Skill</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a>
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Skills</span>
+      </div>
+    </nav>
+<br>
+<br>
+<div class="container edit">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" img-fluid" src="https://img.icons8.com/ios-filled/150/000000/development-skill.png" alt="card image"><span class="font-weight-bold">{{userData.displayName}}</span><span class="text-black-50">{{userData.email}}</span><span> </span></div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Add Skill</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="skill name" value="" [(ngModel)]="skillDetails.name"></div>
+                        <div class="col-md-6"><label class="labels">Last Used</label><input type="date" class="form-control" value="" placeholder="last used" [(ngModel)]="skillDetails.lastUsed"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Duration</label><input type="text" class="form-control" placeholder="enter duration" value="" [(ngModel)]="skillDetails.duration"></div>
+                        <div class="col-md-12"><label class="labels">Developing</label>
+                          </div>
+                          <div class="col-md-12"><label class="form-check-label col-md-12">
+                            <input type="radio" class="form-check-input " name="optionsRadios" id="optionsRadios1" value="option1" checked=""  [(ngModel)]="skillDetails.developing">
+                            true
+                        </label>
+                          </div>
+                          <div class="col-md-12"><label class="form-check-label col-md-12">
+                            <input type="radio" class="form-check-input " name="optionsRadios" id="optionsRadios1" value="option1" checked=""  [(ngModel)]="skillDetails.developing">
+                            false
+                        </label>
+                          </div>
+                        <div class="col-md-12"><label class="labels">Rating</label><input type="number" class="form-control" placeholder="enter rating out of 5" value="" [(ngModel)]="skillDetails.rating"></div>
+
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" (click) = "createSkill()">Save Skill</button></div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+  </section>
+  
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
+
+
+<router-outlet></router-outlet>

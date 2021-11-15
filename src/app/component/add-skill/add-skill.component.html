@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Boxicons CDN Link -->    
+    <title>Add Skill</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <app-header></app-header>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <!-- <i class='bx bx-menu sidebarBtn'></i> -->
+        <span class="dashboard">Add Skill</span>
+      </div>
+    </nav>
+​
+    <div class="home-content">
+
+      <!-- form starts -->
+      <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="icon icon-settings"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="name" placeholder="skill name"  name="name" [(ngModel)]="skillDetails.name">
+            </div>
+            <div class="form-group">
+              <input type="date" class="form-control item" id="lastUsed" placeholder="Skill Last Used" max=""  name="lastUsed" [(ngModel)]="skillDetails.lastUsed">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control item" id="duration" placeholder="Duration e.g 6 months/1year"  name="duration" [(ngModel)]="skillDetails.duration">
+        </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="developing" placeholder="Are You Still Developing e.g true or false"  name="developing" [(ngModel)]="skillDetails.developing">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control item" id="rating" placeholder="Rate Out Of 10"  name="rating" min="1" max="10"[(ngModel)]="skillDetails.rating">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-block create-account"  (click) = "createSkill()" routerLink="/profile/{{userData.id}}" >Add Skill</button>
+            </div>
+        </form>
+    </div>
+      <!-- form ends -->
+      
+    </div>
+  </section>
+
+
+<router-outlet></router-outlet>

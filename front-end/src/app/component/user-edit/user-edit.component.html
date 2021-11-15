@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">Expressers</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/user-list" >
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="active">
+            <i class='bx bxs-add-to-queue' ></i>
+            <span class="links_name">Edit User</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a routerLink="" >
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Users</span>
+      </div>
+    </nav>
+<br>
+<br>
+<div class="container edit">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" img-fluid" src="https://img.icons8.com/ios/300/000000/user--v3.png" alt="card image"><span class="font-weight-bold">{{userData.displayName}}</span><span class="text-black-50">{{userData.email}}</span><span> </span></div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value="" [(ngModel)]="userData.name"></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname" [(ngModel)]="userData.surname"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Display Name</label><input type="text" class="form-control" placeholder="enter display name" value="" [(ngModel)]="userData.displayName"></div>
+                        <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="enter Password" value="" [(ngModel)]="userData.password"></div>
+                        <div class="col-md-12"><label class="labels">Email ID</label><input type="email" class="form-control" placeholder="enter email id" value="" [(ngModel)]="userData.email"></div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" (click) = "updateUser()">Save Profile</button></div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+  </section>
+  
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
+
+
+<router-outlet></router-outlet>

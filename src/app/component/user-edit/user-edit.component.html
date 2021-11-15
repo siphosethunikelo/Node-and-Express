@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Boxicons CDN Link -->
+    <title>Edit User</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <app-header></app-header>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Edit Profile</span>
+      </div>
+    </nav>
+​
+    <div class="home-content">
+
+      <!-- form starts -->
+      <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" placeholder="Username"  name="username" [(ngModel)]="userData.username">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control item" id="name" placeholder="Name"  name="name" [(ngModel)]="userData.name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control item" id="surname" placeholder="Surname"  name="surname" [(ngModel)]="userData.surname">
+        </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="password" placeholder="Password"  name="password" [(ngModel)]="userData.password">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="email" placeholder="Email"  name="email" [(ngModel)]="userData.email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number"  name="phone" [(ngModel)]="userData.phone">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="age" placeholder="Age"  name="age" [(ngModel)]="userData.age">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control item" id="address" placeholder="Address"  name="address" [(ngModel)]="userData.address">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control item" id="github" placeholder="GitHub Link"  name="git" [(ngModel)]="userData.git">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control item" id="facebook" placeholder="Facebook"  name="facebook" [(ngModel)]="userData.facebook">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control item" id="title" placeholder="Title"  name="title" [(ngModel)]="userData.title">
+    </div>
+    <div class="form-group" *ngIf='adminBoolean'>
+      <input type="text" class="form-control disabled item" id="admin" placeholder="Admin"  name="admin" [(ngModel)]="userData.admin">
+  </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-block create-account"  (click) = "updateUser()" >Update Account</button>
+            </div>
+        </form>
+    </div>
+      <!-- form ends -->
+      
+    </div>
+  </section>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="card"></div>
+	<div class="card">
+	  <h1 class="title">Login</h1>
+	  <form [formGroup] = "guestForm">
+		<div class="input-container">
+		  <input type="text" id="email" required="required" formControlName="email"/>
+		  <label for="email">Email</label>
+		  <div class="bar"></div>
+		</div>
+		<div class="input-container">
+		  <input type="password" id="Password" required="required" formControlName="password"/>
+		  <label for="Password">Password</label>
+		  <div class="bar"></div>
+		</div>
+		<div class="button-container">
+		  <button (click)="login(guestForm.value)" type="submit"><span>Log In</span></button>
+		</div>
+	  </form>
+	</div>
+</div>
+</body>
+</html>

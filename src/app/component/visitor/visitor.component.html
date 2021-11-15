@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Boxicons CDN Link -->
+    <title>Profile</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <!-- <app-header></app-header> -->
+  <section class="home-section">
+    <!-- <nav class="title">
+      <div class="sidebar-button">
+        <span class="dashboard">{{userData.name}}'s Profile</span>
+      </div>
+    </nav> -->
+​
+    <div class="home-content">
+
+      <!-- my profile starts -->
+      <div class="container">
+        <div class="main-body">
+        
+              <div class="row gutters-sm">
+                <div class="col-md-4 mb-3" >
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img  src= {{userPicture.url}} alt="Admin" class="rounded-square" width="150">
+                        <div class="mt-3">
+                          <h4></h4>
+                          <p class="text-secondary mb-1">{{userData.name}} {{userData.surname}}</p>
+                          <p class="text-muted font-size-sm">{{userData.title}}</p>
+                          <!-- <button class="btn btn-primary" (click) ="deleteUser(userData.id)">Delete</button> -->
+                          <a href="mailto:{{userData.email}}?subject=Interview%20Invitation" target="_blank" class="btn btn-outline-primary" >
+                            Chat
+                          </a>
+                          <!-- modal start -->
+                          <!-- <button class="btn btn-outline-primary" (click)="triggerModal(modalData)" *ngIf="!adminBoolean">Change Picture</button>
+
+                          <ng-template #modalData let-modal>
+                            <div class="modal-header">
+                              <h4 class="modal-title" id="modal-basic-title">Upload New Profile Picture</h4>
+                              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group col-12">
+                                <input type="file"
+                                id="file"
+                                #userPhoto
+                                (change)="onFileSelected($event)"
+                                name="image"
+                                autocomplete="off"
+                                />
+                               </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-success" (click)="modal.close('Save click')">Save</button>
+                            </div>
+                          </ng-template> -->
+                          <!-- modal ends -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- link start -->
+                  <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
+                        <span class="text-secondary"><a href="{{userData.git}}" target="_blank">{{userData.git}}</a></span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                        <span class="text-secondary"><a href="{{userData.facebook}}" target="_blank">{{userData.facebook}}</a></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- links end -->
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.name}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Surname</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.surname}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Username</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.username}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Age</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.age}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.email}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Phone</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.phone}}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{userData.address}}
+                        </div>
+                      </div>
+                      <hr>
+                      <!-- <div class="row" *ngIf="!adminBoolean">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info " routerLink="/user-edit/{{userData.id}}">Edit</a>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+    
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="d-flex align-items-center mb-3">Skills</h5>
+                          <!-- <button class="btn btn-primary" (click) ="deleteUser(userData.id)">Add Skill</button> -->
+                          <div class="skills" *ngFor="let skill of Skills">
+                            
+                          <div class="text-center">
+                            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status" *ngIf="Skills.lenght ===0 ">
+                            </div>
+                          </div>
+                            <div class="col-sm-2">
+                          <p class="skill_name">{{skill.name}}</p>
+                        </div>
+
+                        <div class="col-sm-8">
+                          <div class="progress mb-5" style="height: 30px">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width:{{skill.rating}}0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0">
+                            {{skill.rating}}0%</div>
+                          </div>
+                          </div>
+
+                          <div class="col-sm-2 buttons" *ngIf="!adminBoolean">
+                          <div class="">
+                          <!-- <button type="button" class="btn btn-outline-primary" routerLink="/user-edit-skills/{{skill.skill_id}}">Edit</button> -->
+                          <!-- <button type="button" class="btn btn-outline-primary" id="skill-btn" (click) ="deleteSkills(skill.skill_id)" >Delete</button> -->
+                          </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+    
+    
+                </div>
+              </div>
+    
+            </div>
+        </div>
+      <!-- my profile ends -->
+      
+    </div>
+  </section>
+​
+<router-outlet></router-outlet>
+​

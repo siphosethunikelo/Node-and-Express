@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+ 
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3">
+            <form [formGroup] = "guestForm">
+  			<div id="iosBlurBg">
+  				<div id="whiteBg"></div>
+  			</div>
+  			<div id="bottomEnter"></div>
+  			<div id="bottomBlurBg"></div>
+  			<!-- Login Form -->
+  			<div class="loginForm">
+  				<div class="title">
+  					<p>LOG INTO<br><span>SYSTEM</span></p>
+  					<hr>
+  					<hr class="short">
+  				</div>
+  					<div class="col-3" >
+			        	<input class="form-group effect-2" type="text" placeholder="Email..." formControlName="email">
+			            <span class="focus-border"></span>
+
+			            <input class="form-group effect-2" type="password" placeholder="Password..." formControlName="password">
+			            <span class="focus-border"></span>
+			        </div>
+
+
+  			</div>
+              <!-- <button type="submit" (click)="login(guestForm.value)" routerLink = "/user-list" class="btn btn-primary">Submit</button> -->
+              <a (click)="login(guestForm.value)" routerLink = "/user-list">
+                <div class="enterButton">
+                    <i class="fa fa-lock fa-2x text-white"></i><br>
+                    <span class="enterText text-white">Enter</span>
+                </div>
+            </a>
+            </form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
